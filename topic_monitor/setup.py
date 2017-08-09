@@ -1,17 +1,27 @@
-from ament_python.data_files import get_data_files
-from ament_python.script_dir import install_scripts_to_libexec
+import sys
+
 from setuptools import find_packages
 from setuptools import setup
 
 package_name = 'topic_monitor'
-data_files = get_data_files(package_name)
-install_scripts_to_libexec(package_name)
+
+# install scripts into libexec path
+if 'develop' in sys.argv:
+    sys.argv[sys.argv.index('develop') + 1:sys.argv.index('develop') + 1] = \
+        ['--script-dir', '$base/lib/' + package_name]
+if 'install' in sys.argv:
+    sys.argv[sys.argv.index('install') + 1:sys.argv.index('install') + 1] = \
+        ['--install-scripts', '$base/lib/' + package_name]
 
 setup(
     name='topic_monitor',
     version='0.0.0',
     packages=find_packages(exclude=['test']),
-    data_files=data_files,
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
     install_requires=[
         'launch',
         'setuptools',
