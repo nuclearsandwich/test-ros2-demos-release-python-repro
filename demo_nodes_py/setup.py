@@ -1,17 +1,7 @@
-import sys
-
 from setuptools import find_packages
 from setuptools import setup
 
 package_name = 'demo_nodes_py'
-
-# install scripts into libexec path
-if 'develop' in sys.argv:
-    sys.argv[sys.argv.index('develop') + 1:sys.argv.index('develop') + 1] = \
-        ['--script-dir', '$base/lib/' + package_name]
-if 'install' in sys.argv:
-    sys.argv[sys.argv.index('install') + 1:sys.argv.index('install') + 1] = \
-        ['--install-scripts', '$base/lib/' + package_name]
 
 setup(
     name=package_name,
