@@ -1,4 +1,4 @@
-From 6bc34bf49ef4e784a42bdd4103337df1ecd5ade0 Mon Sep 17 00:00:00 2001
+From 8594de918c216240f37f923bc69950c5722a6eeb Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Steven!=20Ragnar=C3=B6k?= <steven@nuclearsandwich.com>
 Date: Fri, 30 Jun 2017 21:28:20 -0400
 Subject: [PATCH] Add multiarch dir to dh_shlibdeps.
@@ -8,7 +8,7 @@ Subject: [PATCH] Add multiarch dir to dh_shlibdeps.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/debian/rules.em b/debian/rules.em
-index f589242..41e8f53 100755
+index 53f0146..0ab436b 100755
 --- a/debian/rules.em
 +++ b/debian/rules.em
 @@ -53,7 +53,7 @@ override_dh_shlibdeps:
