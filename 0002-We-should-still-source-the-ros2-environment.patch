@@ -1,4 +1,4 @@
-From 3ec3fa8693be224e2ff1f75a50f2bf483c8298fc Mon Sep 17 00:00:00 2001
+From a502038fc26d005e7d36c7637c811a339b7b89d4 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Steven!=20Ragnar=C3=B6k?= <steven@nuclearsandwich.com>
 Date: Fri, 30 Jun 2017 14:47:02 -0400
 Subject: [PATCH 2/2] We should still source the ros2 environment.
@@ -11,10 +11,10 @@ available and used.
  1 file changed, 1 insertion(+)
 
 diff --git a/debian/rules.em b/debian/rules.em
-index bab4eac..d953865 100755
+index 2e5bde7..d656175 100755
 --- a/debian/rules.em
 +++ b/debian/rules.em
-@@ -29,6 +29,7 @@ export @(var[0])=@(var[1])
+@@ -29,6 +29,7 @@ export @(name)='@(value)'
  override_dh_auto_clean:
  	# We don't have ament_python in the iamge that creates sourcedebs
  	# So for now we need to give a pass to dh_auto_clean invoking setup.py clean.
